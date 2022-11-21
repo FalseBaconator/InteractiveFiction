@@ -20,19 +20,74 @@ namespace InteractiveFiction
         static string[] page;
         static int currentPage = 0;
         static int menuPos;
-        static char
+        static ConsoleKeyInfo input;
 
         static void Main(string[] args)
         {
             Console.SetWindowSize(49, 13);
+            WritePage(currentPage);
             while(gameOver == false)
             {
-                WritePage(currentPage);
-
+                input = Console.ReadKey(true);
+                if(input.Key == ConsoleKey.LeftArrow || input.Key == ConsoleKey.A){
+                    DrawCursor(0);
+                }else if (input.Key == ConsoleKey.RightArrow || input.Key == ConsoleKey.D)
+                {
+                    DrawCursor(1);
+                }else if(input.Key == ConsoleKey.Escape)
+                {
+                    gameOver = true;
+                }
             }
             
         }
 
+        static void DrawCursor(int pos)
+        {
+            menuPos = pos;
+            if(pos == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red; //
+                Console.SetCursorPosition(2, 8);            //
+                Console.Write("+--------------------+");    //
+                Console.SetCursorPosition(2, 9);            //
+                Console.Write("|");                         //  Draw Current Menu Pos
+                Console.SetCursorPosition(23, 9);           //
+                Console.Write("|");                         //
+                Console.SetCursorPosition(2, 10);           //
+                Console.Write("+--------------------+");    //
+
+                Console.SetCursorPosition(25, 8);               //
+                Console.Write("                      ");        //
+                Console.SetCursorPosition(25, 9);               //
+                Console.Write(" ");                             //  Erase Old Menu Pos
+                Console.SetCursorPosition(46, 9);               //
+                Console.Write(" ");                             //
+                Console.SetCursorPosition(25, 10);              //
+                Console.Write("                      ");        //
+            }
+            else if(pos == 1)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(25, 8);               //
+                Console.Write("+--------------------+");        //
+                Console.SetCursorPosition(25, 9);               //
+                Console.Write("|");                             //  Draw Current Menu Pos
+                Console.SetCursorPosition(46, 9);               //
+                Console.Write("|");                             //
+                Console.SetCursorPosition(25, 10);              //
+                Console.Write("+--------------------+");        //
+
+                Console.SetCursorPosition(2, 8);            //
+                Console.Write("                      ");    //
+                Console.SetCursorPosition(2, 9);            //
+                Console.Write(" ");                         //  Erase Old Menu Pos
+                Console.SetCursorPosition(23, 9);           //
+                Console.Write(" ");                         //
+                Console.SetCursorPosition(2, 10);           //
+                Console.Write("                      ");    //
+            }
+        }
 
         static void DrawUI()
         {
@@ -53,6 +108,7 @@ namespace InteractiveFiction
 
         static void WritePage(int pageNum)
         {
+            Console.ResetColor();
             Console.Clear();
             DrawUI();
             page = story[pageNum].Split(';');
