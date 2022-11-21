@@ -19,7 +19,7 @@ namespace InteractiveFiction
 
         static string[] page;
         static int currentPage = 0;
-        static int menuPos;
+        static int menuPos = 5;
         static ConsoleKeyInfo input;
 
         static void Main(string[] args)
@@ -37,9 +37,15 @@ namespace InteractiveFiction
                 }else if(input.Key == ConsoleKey.Escape)
                 {
                     gameOver = true;
+                }else if(input.Key == ConsoleKey.Enter)
+                {
+                    if(menuPos == 0 || menuPos == 1)
+                    {
+                        WritePage(int.Parse(page[3 + menuPos]));
+                    }
                 }
             }
-            
+            Console.ReadKey(true);
         }
 
         static void DrawCursor(int pos)
@@ -108,9 +114,11 @@ namespace InteractiveFiction
 
         static void WritePage(int pageNum)
         {
+            menuPos = 5;
             Console.ResetColor();
             Console.Clear();
             DrawUI();
+            currentPage = pageNum;
             page = story[pageNum].Split(';');
             if (page.Length == 5)
             {
@@ -123,7 +131,7 @@ namespace InteractiveFiction
             }
             else
             {
-                Console.SetCursorPosition(2, 2);
+                Console.SetCursorPosition(3, 3);
                 Console.WriteLine(story[pageNum]);
                 gameOver = true;
             }
