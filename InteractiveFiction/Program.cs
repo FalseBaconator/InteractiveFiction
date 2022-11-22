@@ -10,9 +10,10 @@ namespace InteractiveFiction
     {
 
         static string[] story = new string[]{
-            "Test 1;Test 2;Test 3;1;2",
+            "Test 1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;Test 2;Test 3;1;2",
+            //"Test 1; Test 2; Test 3;1;2",
             "Test 2",
-            "Test 3"
+            "Test 3 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567891011121314151617181920"
         };
 
         static bool gameOver = false;
@@ -102,7 +103,7 @@ namespace InteractiveFiction
             Console.WriteLine(" +---------------------------------------------+");
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine(" |                                             |");
+                Console.WriteLine(" |                                             |"); //line is 43 characters long
             }
             Console.WriteLine(" +----------------------+----------------------+");
             for (int i = 0; i < 3; i++)
@@ -120,10 +121,39 @@ namespace InteractiveFiction
             DrawUI();
             currentPage = pageNum;
             page = story[pageNum].Split(';');
+
+
+            List<string> pageContents = new List<string>                    //
+            {                                                               //
+                                                                            //
+            };                                                              //
+            List<char> tempPageContents = new List<char>                    //
+            {                                                               //
+                                                                            //
+            };                                                              //
+            for (int i = 0; i < page[0].Length; i++)                        //  Text Wrapping
+            {                                                               //
+                tempPageContents.Add(page[0][i]);                           //
+                if(tempPageContents.Count >= 43)                            //
+                {                                                           //
+                    pageContents.Add(string.Concat(tempPageContents));      //
+                    tempPageContents.Clear();                               //
+                }                                                           //
+            }                                                               //
+            pageContents.Add(string.Concat(tempPageContents));              //
+            
             if (page.Length == 5)
             {
-                Console.SetCursorPosition(3, 3);
-                Console.Write(page[0]);
+                
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.SetCursorPosition(3, 3 + i);
+                    if(pageContents.Count > i)
+                    {
+                        Console.WriteLine(pageContents[i]);
+                    }
+                }
+
                 Console.SetCursorPosition(3, 9);
                 Console.Write(page[1]);
                 Console.SetCursorPosition(26, 9);
@@ -131,8 +161,14 @@ namespace InteractiveFiction
             }
             else
             {
-                Console.SetCursorPosition(3, 3);
-                Console.WriteLine(story[pageNum]);
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.SetCursorPosition(3, 3 + i);
+                    if (pageContents.Count > i)
+                    {
+                        Console.WriteLine(pageContents[i]);
+                    }
+                }
                 gameOver = true;
             }
         }
