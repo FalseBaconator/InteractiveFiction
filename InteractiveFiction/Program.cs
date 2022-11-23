@@ -19,7 +19,7 @@ namespace InteractiveFiction
             "The tent on the left is completely empty, but the one on the left has a dead body within it. There's something in it's hand.;Look closer;Leave it alone;7;0",                  //6
             "Looking closer you see that it's a dagger, if the engraving on the side is to be believed it's made of pure silver;Take it; Leave it alone;8;0",                               //7
             "The dagger has a bit of weight to it. As you continue down the trail you see another fork in the road. Both paths seem identical.;Go left;Go right;9;0",                       //8
-            "You continue walking down the trail when you hear a branch snap to your left. You only have a moment to prepare to...;Attack;Run;10;0",                                        //9
+            "You continue walking down the trail when you hear a branch snap to your left. You only have a moment to prepare to...;Attack;Run;10;24",                                       //9
             "A monstrous mockery of a wolf jumps out at you when you slash at it with the dagger, cutting it's arm. It falls to the ground.;Examine it;Run;11;12",                          //10
             "As you get closer to the figure it suddenly lashes out at you. It's claws tear at your ankle as you fall down beside it.",                                                     //11
             "With the creature injured you take your chance to make a break for it. As you run the thing gets back up and begins to chase you.;Duck into the forest;Attack again;13;14",    //12
@@ -34,6 +34,22 @@ namespace InteractiveFiction
             "You walk down the trail to find your car of all things. You drive to the hospital hoping your small cut doesn't get infected.",                                                //21
             "You lie against the creature for a quick breather. When you get up to leave you find that the silver dagger now burns your hand.",                                             //22
             "As you try to walk, your shattered ankle makes you collapse. While you may have defeated the creature, you aren't leaving.",                                                   //23
+            "A monstrous mockery of a wolf jumps out of the woods and begins to chase after you. It quickly catches up and jumps at you;Block;Dodge;25;36",                                 //24
+            "You raise your arm right as the creature bites it. You fall back with the creature on top of you.;Stab it; Bite it;26;27",                                                     //25
+            "You stab the creature in the eye causing it to lurch back, tearing half your arm off as it does.;Stab it again;Run;28;35",                                                     //26
+            "You bite the creatures nose. This proves unhelpful as it tears your arm off, and a clawed hand is run through your chest.",                                                    //27
+            "As you go to stab it again, the creature starts flailing its arms wildly preventing you from getting closer.;Wait for an opening;Rush in anyways;29;30",                       //28
+            "As you wait for an opening you notice that the silver dagger seems to be getting hotter in your hand. Soon it will start to burn.;Drop it;Throw it;31;32",                     //29
+            "You rush in anyways, only for a clawed hand to slash you accross the face before another one bats you towards a tree.",                                                        //30
+            "You drop the dagger and turn to run when you stop in your tracks. You look down to see a clawed hand coming out of your chest.",                                               //31
+            "You throw the dagger right into the creature's throat. The creature falls dead. Now you just need to find a way to patch up your arm.;Use sweater;Use leaves;33;34",           //32
+            "You tie your sweater around your arm to try and stop the bleeding. You leave the forest and find your car. How are you gonna drive?",                                          //33
+            "You tie leaves around your arm as tightly as you can and continue down the trail. You start getting dizzy and take a long nap.",                                               //34
+            "Luckily the creature doesn't seem to notice you, now more concerned with it's injury. You still have to patch up your arm though.;Use sweater;Use leaves;33;34",               //35
+            "You try to dodge only to trip on a root. You get up as quickly as you can only to feel claws slash at your back.",                                                             //36
+
+
+
 
 
             "The End!"
