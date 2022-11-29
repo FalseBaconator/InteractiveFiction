@@ -12,11 +12,11 @@ namespace InteractiveFiction
         static string[] story = new string[]{
             "Forest Story;Start;Quit;2;1",                                                                                                                                                  //0
             "",                                                                                                                                                                             //1
-            "You awake in a dark and foggy forest. The forest is dense besides a small dirt road before you.;Follow the trail;Try the woods;3;84",                                           //2
+            "You awake in a dark and foggy forest. The forest is dense besides a small dirt road before you.;Follow the trail;Try the woods;3;84",                                          //2
             "You follow the trail to a fork in the road. To your left is the sound of running water, and to your right a faint light.;Go left;Go right;4;57",                               //3
             "You come across a rushing river. The river seems to have washed up a few dead trees;Swim Across;Make a bridge;5;6",                                                            //4
             "As you attempt to swim accross, the strong river ends up pulling you under. The last thing you see are the rocks under the river.",                                            //5
-            "You place a dead tree accross the river and cross it. You hear a howling from the woods, much lowder than an ordinary wolf.;Keep to the trail;Hide in the woods;7;0",          //6
+            "You place a dead tree accross the river and cross it. You hear a howling from the woods, much lowder than an ordinary wolf.;Keep to the trail;Hide in the woods;7;85",         //6
             "You follow the trail, eventually finding an abandonned campsite, with two closed tents and a still burning campfire.;Examine the camp;Move on;8;51",                           //7
             "The tent on the left is completely empty, but the one on the left has a dead body within it. There's something in it's hand.;Look closer;Leave it alone;9;51",                 //8
             "Looking closer you see that it's a dagger, if the engraving on the side is to be believed it's made of pure silver;Take it; Leave it alone;10;51",                             //9
