@@ -12,7 +12,7 @@ namespace InteractiveFiction
         static string[] story = new string[]{
             "Forest Story;Start;Quit;2;1",                                                                                                                                                  //0
             "",                                                                                                                                                                             //1
-            "You awake in a dark and foggy forest. The forest is dense besides a small dirt road before you.;Follow the trail;Try the woods;3;0",                                           //2
+            "You awake in a dark and foggy forest. The forest is dense besides a small dirt road before you.;Follow the trail;Try the woods;3;84",                                           //2
             "You follow the trail to a fork in the road. To your left is the sound of running water, and to your right a faint light.;Go left;Go right;4;57",                               //3
             "You come across a rushing river. The river seems to have washed up a few dead trees;Swim Across;Make a bridge;5;6",                                                            //4
             "As you attempt to swim accross, the strong river ends up pulling you under. The last thing you see are the rocks under the river.",                                            //5
@@ -77,7 +77,7 @@ namespace InteractiveFiction
             "You find what appears to be a study, with a desk against the wall furthest from the door.;Examine;Go back;65;58",                                                              //64
             "A journal lies on top of the desk and makes mention of a werewolf living in the forest. The desk has drawers;Check drawer;Go back;66;58",                                      //65
             "You find a revolver in the drawer. The journal mentions a revolver loaded with silver bullets.;Take it;Go back;73;58",                                                         //66
-            "You enter what appears to be a kitchen. There's a wood stove on the wall to your left and a window in far wall.;Examine;68;60",                                                //67
+            "You enter what appears to be a kitchen. There's a wood stove on the wall to your left and a window in far wall.;Examine;Go back;68;60",                                        //67
             "There is a pile of dirty dishes in a sink under the window, and a block of knives next to the stove.;Take a knife;Go back;69;60",                                              //68
             "As you grab a knife, a monstrous mockery of a wolf jumps through the window. The knife proves useless against it. It kills you.",                                              //69
             "You enter a bedroom. The bed is rather small, only big enough for one person. That person being the bloody corpse lying on it.;Examine;Go back;71;60",                         //70
@@ -94,7 +94,8 @@ namespace InteractiveFiction
             "As you enter the bedroom, you see a bloody corpse on the bed. Suddenly the werewolf barges in and kills you.",                                                                 //81
             "You shoot the werewolf again, just to be sure. You once again travel through the woods, eventually finding your car and leaving.",                                             //82
             "You just leave, once again travelling through the woods. You eventuall find your car and leave the forest, driving home.",                                                     //83
-            "The End!"                                                                                                                                                                      //84
+            "You very quickly get lost in the forest. You eventually end up back on the trail at a fork in the road;Go left;Go right;52;53",                                                //84
+            "The End!"                                                                                                                                                                      //85
         };
 
         static bool gameOver = false;
