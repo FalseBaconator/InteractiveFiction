@@ -111,26 +111,26 @@ namespace InteractiveFiction
             WritePage(currentPage);
             while(gameOver == false)
             {
-                input = Console.ReadKey(true);
-                if(input.Key == ConsoleKey.LeftArrow || input.Key == ConsoleKey.A){
-                    DrawCursor(0);
-                }else if (input.Key == ConsoleKey.RightArrow || input.Key == ConsoleKey.D)
-                {
-                    DrawCursor(1);
-                }else if(input.Key == ConsoleKey.Escape)
-                {
-                    gameOver = true;
-                }else if(input.Key == ConsoleKey.Enter)
-                {
-                    if(menuPos == 0 || menuPos == 1)
-                    {
-                        WritePage(int.Parse(page[3 + menuPos]));
-                    }
-                }
+                input = Console.ReadKey(true);  //Get Input
+                if(input.Key == ConsoleKey.LeftArrow || input.Key == ConsoleKey.A){             //
+                    DrawCursor(0);                                                              //
+                }else if (input.Key == ConsoleKey.RightArrow || input.Key == ConsoleKey.D)      //  Move Cursor
+                {                                                                               //
+                    DrawCursor(1);                                                              //
+                }else if(input.Key == ConsoleKey.Escape)    //
+                {                                           //  Exit Game
+                    gameOver = true;                        //
+                }else if(input.Key == ConsoleKey.Enter)             //
+                {                                                   //
+                    if(menuPos == 0 || menuPos == 1)                //
+                    {                                               //  Select current option
+                        WritePage(int.Parse(page[3 + menuPos]));    //
+                    }                                               //
+                }                                                   //
             }
-            Console.ReadKey(true);
-            WritePage(story.Length - 1);
-            Console.ReadKey(true);
+            Console.ReadKey(true);          //
+            WritePage(story.Length - 1);    //  The End
+            Console.ReadKey(true);          //
         }
 
         static void DrawCursor(int pos)
@@ -226,35 +226,35 @@ namespace InteractiveFiction
             }                                                               //
             pageContents.Add(string.Concat(tempPageContents));              //
             
-            if (page.Length == 5)
-            {
-                
-                for (int i = 0; i < 3; i++)
-                {
-                    Console.SetCursorPosition(3, 3 + i);
-                    if(pageContents.Count > i)
-                    {
-                        Console.WriteLine(pageContents[i]);
-                    }
-                }
-
-                Console.SetCursorPosition(3, 9);
-                Console.Write(page[1]);
-                Console.SetCursorPosition(26, 9);
-                Console.Write(page[2]);
-            }
-            else
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    Console.SetCursorPosition(3, 3 + i);
-                    if (pageContents.Count > i)
-                    {
-                        Console.WriteLine(pageContents[i]);
-                    }
-                }
-                gameOver = true;
-            }
+            if (page.Length == 5)                               //
+            {                                                   //
+                                                                //
+                for (int i = 0; i < 3; i++)                     //
+                {                                               //
+                    Console.SetCursorPosition(3, 3 + i);        //
+                    if(pageContents.Count > i)                  //
+                    {                                           //
+                        Console.WriteLine(pageContents[i]);     //  Show Options
+                    }                                           //
+                }                                               //
+                                                                //
+                Console.SetCursorPosition(3, 9);                //
+                Console.Write(page[1]);                         //
+                Console.SetCursorPosition(26, 9);               //
+                Console.Write(page[2]);                         //
+            }                                                   //
+            else                                            //
+            {                                               //
+                for (int i = 0; i < 3; i++)                 //
+                {                                           //
+                    Console.SetCursorPosition(3, 3 + i);    //
+                    if (pageContents.Count > i)             //
+                    {                                       //  End Game
+                        Console.WriteLine(pageContents[i]); //
+                    }                                       //
+                }                                           //
+                gameOver = true;                            //
+            }                                               //
         }
 
 
